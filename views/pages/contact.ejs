@@ -1,0 +1,279 @@
+<% include("../functions") %>
+<html>
+
+<head>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <link rel="stylesheet" href="/stylesheets/style1.css" type="text/css">	
+  <!-- Box Icons -->
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+  <script src="https://web.squarecdn.com/v1/square.js"></script>
+  <script>
+    const appId = 'sq0idp-Ty-LQO88LYpfzIGsmw7kAw';
+    const locationId = 'LAZAZ7CZGD6ZH';
+
+    async function initializeCard(payments) {
+    const card = await payments.card();
+    await card.attach('#card-container'); 
+    return card; 
+    }
+
+    document.addEventListener('DOMContentLoaded', async function () {
+      if (!window.Square) {
+        throw new Error('Square.js failed to load properly');
+      }
+      const payments = window.Square.payments(appId, locationId);
+      let card;
+      try {
+        card = await initializeCard(payments);
+      } catch (e) {
+        console.error('Initializing Card failed', e);
+        return;
+      }
+
+      // Step 5.2: create card payment
+   });
+  </script>
+
+</head>
+
+<body>
+  <header class="header">
+        
+        <!-- Navbar -->
+        <div class="nav container">
+
+            <!-- Logo -->
+            <a href="https://browsbydino.com/index.html" class="logo">
+                <img src="/images/logo.png">
+                <span class="logo-name">Beauty Studio by Dino</span>
+            </a>
+
+            <!-- Nav Links -->
+            <div class="navbar">
+                <li><a href="https://browsbydino.com/index.html" class="nav-link">Home</a></li>
+                <li><a href="https://browsbydino.com/pages/about.html" class="nav-link">About</a></li>
+                <li><a href="https://browsbydino.com/pages/services.html" class="nav-link"> Services</a></li>
+                <li><a href="https://browsbydino.com/pages/contact.html" class="nav-link">Contact</a></li>
+                <a href="" class="schedule-btn btn">Book Now</a>
+            </div>
+
+            <!-- Icons -->
+            <div class="header-icon">
+                <i class='bx bx-user'></i>
+            </div>
+
+            <!-- Menu Icon -->
+            <div class="menu-icon">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+
+        </div>
+
+  </header>
+  <!-- About Us Home -->
+    <section class="ourservices" id="ourservices">
+        
+        <div class="aboutus-data container">
+
+             <!-- Home Text -->
+            <div class="aboutus-text">
+
+                <h1>Our Services</h1>
+
+            </div>
+
+        </div>
+
+    </section>
+  <div class="space"></div>
+
+  <div class="content">
+    <div class="content-left">
+      <a class="button" href="/availability/<%= teamMemberBookingProfile.teamMemberId %>/<%= serviceVariation.id %>?version=<%= serviceVersion %>"><span class="icon back-arrow"></span> Back</a>
+      <div class="steps">
+        <div class="steps__step">
+          <div class="steps__step-wrapper">
+            <div class="steps__step-title">
+              <span>Services</span>
+              <a href="/services">Edit</a>
+            </div>
+            <div class="steps__step-body">
+              <div class="steps__step-name">
+                <%= serviceItem.itemData.name %>
+              </div>
+              <div class="steps__step-description">
+                <%= formatTime(serviceVariation.itemVariationData.serviceDuration) %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="steps__step">
+          <div class="steps__step-wrapper">
+            <div class="steps__step-title">
+              <span>Select staff</span>
+              <a href="/staff/<%= serviceVariation.id %>?version=<%= serviceVersion %>">Edit</a>
+            </div>
+            <div class="availability-staff__card-wrapper">
+              <div class="staff__card-picture-wrapper">
+                <% if (teamMemberBookingProfile.profileImageUrl) { %>
+                  <img src="<%= teamMemberBookingProfile.profileImageUrl %>" />
+                <% } else { %>
+                  <%= getStaffInitials(teamMemberBookingProfile.displayName) %>
+                <% } %>
+              </div>
+              <div class="steps__staff-step-body">
+                <div class="steps__step-name">
+                  <%= teamMemberBookingProfile.displayName %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="steps__step">
+          <div class="steps__step-wrapper">
+            <div class="steps__step-title">
+              <span>Appointment time</span>
+              <a href="/availability/<%= teamMemberBookingProfile.teamMemberId %>/<%= serviceVariation.id %>?version=<%= serviceVersion %>">Edit</a>
+            </div>
+            <div class="steps__step-body">
+              <div class="steps__step-name">
+                <%= convertDateToText(startAt, location.timezone) %>
+              </div>
+              <div class="steps__step-description">
+                <%= convertTimeToText(startAt, location.timezone) %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="steps__step selected">
+          <div class="steps__step-wrapper">
+            <div class="steps__step-title">
+              <span>Enter your details</span>
+              <span class="icon side-caret-selected"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content-main">
+      <h4 class="main-header">You're nearly done. Enter your details below</h4>
+      <form class="sq-form-control contact-form" method="POST" action="/booking/create?serviceId=<%= serviceVariation.id %>&staffId=<%= teamMemberBookingProfile.teamMemberId %>&version=<%= serviceVersion %>&startAt=<%= startAt %>">
+        <input class="half-width" type="text" name="givenName" required maxlength="50" placeholder="First name" />
+        <input class="half-width" type="text" name="familyName" required maxlength="50" placeholder="Last name" />
+        <input class="half-width" name="emailAddress" required maxlength="320" placeholder="Email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Invalid email address" />
+        <textarea name="customerNote" placeholder="Appointment notes (optional)" maxlength="1500" rows="5"></textarea>	
+      
+      <!--
+      <h4 class="main-header">Secure your appointment with a card on file</h4>
+      <h5 class="sub-header">A card on file is required to book your appointment.</h5>
+      -->
+
+      <div id="payment-form">
+          <h4 class="main-header">Secure your appointment with a card on file</h4>
+          <h5 class="sub-header">A card on file is required to book your appointment.</h5>
+          <div id="payment-status-container"></div>
+          <div id="card-container"></div>
+          <button id="card-button" type="button">Pay $1.00</button>
+      </div>
+
+      <div class="policies">
+        <h5 class="policies-header">Policies</h5>
+	<input type="checkbox" id="policies" name="policies"/>
+        <label for="policies">I have read and agree to the cancellation policy of Beauty Studio by Dino. Please contact Beauty Studio by Dino to learn more about their privacy practices.</label>
+      </div>
+	
+      <div class="small-space"></div>
+
+      <div>
+	<p>By creating this appointment, you acknowledge you will receive automated transactional messages from this merchant. You may also receive promotional emails from Square.</p>
+      </div>
+
+      <div class="small-space"></div>
+
+      <button class="button btn-primary" type="submit">Book appointment</button>
+      </form>
+
+      <div class="space"></div>
+      <div>© 2023 Square, Inc. · <a href="https://squareup.com/us/en/security" target="_blank" >Security</a></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+    <div class="footer-container">
+
+        <section id="footer" class="footer">
+
+        <h5>Book online</h5>
+        <h1>Book Your Session</h1>
+        <p>Offering the best permanent cosmetic treatment / microblading here in Fairfax, VA. 
+            We are also welcoming clients from Tysons Corner, Falls Church, Arlington and more.</p>
+
+        <div><a href="" class="book-btn">BOOK ONLINE</a></div>
+
+        <h4>or call me at</h4>
+        <a href="tel:5712252693">
+            <p class="call">+1 571-225-2693</p>
+        </a>
+        
+        <div class="social">
+            <a href="https://www.facebook.com/BeautyStudiobyDinoLLC" target="_blank">
+                <i class='bx bxl-facebook-circle'></i>
+            </a>
+            <a href="https://www.instagram.com/beautystudioby.dino/" target="_blank">
+                <i class='bx bxl-instagram-alt' ></i>
+            </a>
+            <a href="https://x.com/browsbydino?s=21&t=Zc-iQZvTNHBkPpUmzz8GgQ" target="_blank">
+                <i class='bx bxl-twitter' ></i>
+            </a>
+            <a href="https://www.yelp.com/biz/beauty-studio-by-dino-fairfax-3?utm_campaign=www_business_share_popup&utm_medium=copy_link&utm_source=(direct)" target="_blank">
+                <i class='bx bxl-yelp' ></i>
+            </a>
+        </div>
+
+        <p class="copyright">Copyright © 2023 Beauty Studio by Dino</p>
+
+        </section>
+
+    </div>
+
+    <script src="/js/main.js"></script>
+    
+    <!--
+    <script type="module">   
+    const payments = Square.payments('sandbox-sq0idb-RT3u-HhCpNdbMiGg5aXuVg', 'TC4Z3ZEBKRXRH');
+    const card = await payments.card();
+    await card.attach('#card-container');
+
+    const cardButton = document.getElementById('card-button');
+    cardButton.addEventListener('click', async () => {
+    const statusContainer = document.getElementById('payment-status-container');
+
+      try {
+        const result = await card.tokenize();
+        if (result.status === 'OK') {
+          console.log(`Payment token is ${result.token}`);
+          statusContainer.innerHTML = "Payment Successful";
+        } else {
+          let errorMessage = `Tokenization failed with status: ${result.status}`;
+          if (result.errors) {
+            errorMessage += ` and errors: ${JSON.stringify(
+              result.errors
+            )}`;
+          }
+
+          throw new Error(errorMessage);
+        }
+      } catch (e) {
+        console.error(e);
+        statusContainer.innerHTML = "Payment Failed";
+      }
+    });
+    </script>
+    -->
+
+</body>
+</html>
+

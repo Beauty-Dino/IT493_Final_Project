@@ -1,0 +1,172 @@
+<% include("../functions") %>
+<html>
+  <head>
+    <link href="/stylesheets/style.css" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/style1.css" rel="stylesheet" type="text/css">	
+    <!-- Box Icons -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"> 
+ </head>
+  <body>
+   
+    <header class="header">
+        
+        <!-- Navbar -->
+        <div class="nav container">
+
+            <!-- Logo -->
+            <a href="https://browsbydino.com/index.html" class="logo">
+                <img src="/images/logo.png">
+                <span class="logo-name">Beauty Studio by Dino</span>
+            </a>
+
+            <!-- Nav Links -->
+            <div class="navbar">
+                <li><a href="https://browsbydino.com/index.html" class="nav-link">Home</a></li>
+                <li><a href="https://browsbydino.com/pages/about.html" class="nav-link">About</a></li>
+                <li><a href="https://browsbydino.com/pages/services.html" class="nav-link"> Services</a></li>
+                <li><a href="https://browsbydino.com/pages/contact.html" class="nav-link">Contact</a></li>
+                <a href="" class="schedule-btn btn">Book Now</a>
+            </div>
+
+            <!-- Icons -->
+            <div class="header-icon">
+                <i class='bx bx-user'></i>
+            </div>
+
+            <!-- Menu Icon -->
+            <div class="menu-icon">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+
+        </div>
+
+  </header>
+  <!-- About Us Home -->
+    <section class="ourservices" id="ourservices">
+        
+        <div class="aboutus-data container">
+
+             <!-- Home Text -->
+            <div class="aboutus-text">
+
+                <h1>Our Services</h1>
+
+            </div>
+
+        </div>
+
+    </section>
+    <div class="space"></div>
+     
+    <div class="content">
+      <div class="content-left">
+        <a class="button" href="/staff/<%= serviceId %>?version=<%= serviceVersion %>"><span class="icon back-arrow"></span> Back</a>
+        <div class="steps">
+          <div class="steps__step">
+            <div class="steps__step-wrapper">
+              <div class="steps__step-title">
+                <span>Services</span>
+                <a href="/services">Edit</a>
+              </div>
+              <div class="steps__step-body">
+                <div class="steps__step-name">
+                  <%= serviceItem.itemData.name %>
+                </div>
+                <div class="steps__step-description">
+                  <%= formatTime(serviceVariation.itemVariationData.serviceDuration) %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="steps__step">
+            <div class="steps__step-wrapper">
+              <div class="steps__step-title">
+                <span>Select staff</span>
+                <a href="/staff/<%= serviceId %>?version=<%= serviceVersion %>">Edit</a>
+              </div>
+              <div class="availability-staff__card-wrapper">
+                <div class="staff__card-picture-wrapper">
+                  <% if (locals.bookingProfile && bookingProfile.profileImageUrl) { %>
+                    <img src="<%= bookingProfile.profileImageUrl %>" />
+                  <% } else if (locals.bookingProfile) { %>
+                    <%= getStaffInitials(bookingProfile.displayName) %>
+                  <% } else { %>
+                    <%= getStaffInitials("any") %>
+                  <% } %>
+                </div>
+                <div class="steps__staff-step-body">
+                  <div class="steps__step-name">
+                    <% if (locals.bookingProfile) { %>
+                      <%= bookingProfile.displayName %>
+                    <% } else { %>
+                      Any staff member
+                    <% } %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="steps__step selected">
+            <div class="steps__step-wrapper">
+              <div class="steps__step-title">
+                <span>Appointment time</span>
+                <span class="icon side-caret-selected"></span>
+              </div>
+            </div>
+          </div>
+          <div class="steps__step">
+            <div class="steps__step-wrapper">
+              <div class="steps__step-title">
+                <span>Enter your details</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content-main">
+        <%- include('../partials/date-selector', { availabilities }); %>
+      </div>
+    </div>
+    <!-- Footer -->
+    <div class="footer-container">
+
+        <section id="footer" class="footer">
+
+        <h5>Book online</h5>
+        <h1>Book Your Session</h1>
+        <p>Offering the best permanent cosmetic treatment / microblading here in Fairfax, VA. 
+            We are also welcoming clients from Tysons Corner, Falls Church, Arlington and more.</p>
+
+        <div><a href="" class="book-btn">BOOK ONLINE</a></div>
+
+        <h4>or call me at</h4>
+        <a href="tel:5712252693">
+            <p class="call">+1 571-225-2693</p>
+        </a>
+        
+        <div class="social">
+            <a href="https://www.facebook.com/BeautyStudiobyDinoLLC" target="_blank">
+                <i class='bx bxl-facebook-circle'></i>
+            </a>
+            <a href="https://www.instagram.com/beautystudioby.dino/" target="_blank">
+                <i class='bx bxl-instagram-alt' ></i>
+            </a>
+            <a href="https://x.com/browsbydino?s=21&t=Zc-iQZvTNHBkPpUmzz8GgQ" target="_blank">
+                <i class='bx bxl-twitter' ></i>
+            </a>
+            <a href="https://www.yelp.com/biz/beauty-studio-by-dino-fairfax-3?utm_campaign=www_business_share_popup&utm_medium=copy_link&utm_source=(direct)" target="_blank">
+                <i class='bx bxl-yelp' ></i>
+            </a>
+        </div>
+
+        <p class="copyright">Copyright © 2023 Beauty Studio by Dino</p>
+
+        </section>
+
+    </div>
+
+    <script src="/js/main.js"></script>
+ </body>
+</html>
