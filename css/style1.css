@@ -1,0 +1,803 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+/* Variables */
+:root{
+    --main-color: #edd4c6;
+    --second-color: #edeae3;
+    --third-color: #bc9667;
+    --fourth-color: #fbf6f3;
+    --text-color: #1b1b1b;
+    --bg-color: #ffff;
+}
+
+.aboutus{
+    max-width: 100%;
+    min-height: 80vh;
+    background: url(../Images/about.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+.about-image img{
+    border-radius: 0.5rem;
+    width: 360px;
+    height: 360px;
+}
+
+.who-container, .mission-container{
+    width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, auto));
+    align-items: center;
+    gap: 6rem;
+}
+
+.who-text h1, .benefits-container .benefits-title h1{
+    font-weight: 500;
+    font-size: 40px;
+    padding-bottom: 1rem;
+    color: var(--third-color);
+}
+
+.who-text h4{
+    font-weight: 600;
+    font-size: 16px;
+    padding-bottom: 1rem;
+}
+
+.who-text p{
+    font-size: 16px;
+}
+
+.mission{
+    background-color: var(--fourth-color);
+}
+
+.benefits-container, .whyus-container{
+    width: 1080px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, auto));
+    gap: 6rem;
+}
+
+.benefits-container .benefits-title h4{
+    font-weight: 300;
+    font-size: 16px;
+    color: var(--third-color);
+}
+
+.text-line{
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid;
+}
+
+.text-line h1{
+    font-weight: 500;
+    font-size: 35px;
+    color: var(--third-color);
+}
+
+.text-line p{
+    font-weight: 500;
+    color: var(--third-color);
+}
+
+.whyus-container{
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+}
+
+.whyus h2{
+    font-weight: 450;
+    font-size: 30px;
+    color: var(--third-color);
+}
+
+ul li{
+    font-weight: 350;
+    font-size: 16px;
+    padding-top: 1rem;
+}
+
+.main-container{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    text-align: center;
+    display: grid;
+    place-items: center;
+}
+
+.main-service .main-container .main-row{
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 3rem;
+}
+
+.main-service .main-container .main-column{
+    display: inline block;
+    width: 400px;
+    text-align: left;
+    column-gap: 1rem;
+}
+
+.service1{
+    width: 1000px;
+    margin: auto;
+    height: 600px;
+    background-color: var(--fourth-color);
+    padding: 4rem 5rem;
+    position: relative;
+    background-image: url(../Images/nano.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.service2{
+    width: 1000px;
+    margin: auto;
+    height: 600px;
+    background-color: var(--fourth-color);
+    padding: 4rem 5rem;
+    position: relative;
+    background-image: url(../Images/service1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.service3{
+    width: 1000px;
+    margin: auto;
+    height: 600px;
+    background-color: var(--fourth-color);
+    padding: 4rem 5rem;
+    position: relative;
+    background-image: url(../Images/ombre.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.service4{
+    width: 1000px;
+    margin: auto;
+    height: 600px;
+    background-color: var(--fourth-color);
+    padding: 4rem 5rem;
+    position: relative;
+    background-image: url(../Images/lip.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.space{
+    padding-bottom: 7rem;
+}
+
+.text-rblock{
+    position: absolute;
+    top: 16%;
+    right: -15%;
+    width: 700px;
+    height: 400px;
+    background-color: #fae8de;
+    padding: 3rem 4rem 4rem 4rem;
+    margin: auto;
+    display: grid;
+    vertical-align: middle;
+    opacity: 0.85;
+}
+
+.text-lblock{
+    position: absolute;
+    top: 16%;
+    left: -15%;
+    width: 700px;
+    height: 400px;
+    background-color: #fae8de;
+    padding: 3rem 4rem 4rem 4rem;
+    margin: auto;
+    display: grid;
+    vertical-align: middle;
+    opacity: 0.85;
+}
+
+.service1 h1, .service2 h1, .service3 h1, .service4 h1{
+    color: var(--third-color);
+    font-weight: 500;
+    font-size: 34px;
+    padding-bottom: 1.5rem;
+}
+
+.service1 p, .service2 p, .service3 p, .service4 p{
+    font-size: 14px;
+    padding-bottom: 1rem;
+}
+
+.service1 .text-rblock div, .service1 .text-lblock div{
+    padding-top: 1rem;
+}
+
+.service2 .text-rblock div, .service1 .text-lblock div{
+    padding-top: 1rem;
+}
+
+.service3 .text-rblock div, .service1 .text-lblock div{
+    padding-top: 1rem;
+}
+
+.service4 .text-rblock div, .service1 .text-lblock div{
+    padding-top: 1rem;
+}
+
+.service1 img, .service2 img, .service3 img, .service4 img{
+    position: absolute;
+    top: 16%;
+    right: -15%;
+    height: 400px;
+    width: 500px;
+}
+
+.main-service .main-column h3{
+    font-size: 25px;
+    font-weight: 400;
+    padding-bottom: 0.5rem;
+}
+
+.main-service .main-column p{
+    font-size: 12px;
+    padding-right: 3rem;
+}
+
+.main-service .main-column .service-icon{
+    width: 70px;
+}
+
+.main-service .floating-btn{
+    padding-top: 5rem;
+}
+
+.faqs h2{
+    font-weight: 400;
+    font-size: 35px;
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.ourservices{
+    max-width: 100%;
+    min-height: 80vh;
+    background: url(../Images/cover.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+.faqs{
+    background-color: var(--fourth-color);
+}
+
+.faqs-container{
+    width: 960px;
+    margin: auto;
+    padding-bottom: 2rem;
+}
+
+.collapsible {
+    background-color: var(--fourth-color);
+    color: var(--text-color);
+    font-weight: 500;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+  
+.faqs .active{
+    background-color: var(--main-color);
+}
+
+.collapsible:hover{
+    background-color: var(--main-color);
+}
+  
+.collapsible:after {
+    content: '\002B';
+    color: var(--text-color);
+    font-weight: bold;
+    float: right;
+    margin-left: 10px;
+}
+  
+.content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: var(--fourth-color);
+}
+
+.faqs .content p{
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    font-size: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.contact{
+    max-width: 100%;
+    min-height: 80vh;
+    background: url(../Images/contactus.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+.contact h1, .aboutus h1, .ourservices h1{
+    font-size: 6.5rem;
+    color: var(--bg-color);
+    font-weight: 600;
+    text-align: center;
+}
+
+ /* Highlight Hours */
+ table {
+    border-collapse: collapse;
+}
+
+#activerow > td {
+    color: var(--third-color);
+    font-weight: 600;
+}
+
+#activerow > td > span {
+    color: var(--third-color);
+}
+
+.fvl-d > td {
+    font-size: 0.978rem;
+    font-weight: 400;
+    letter-spacing: 1.2px;
+    color: #595959;
+    text-transform: uppercase;
+    padding-left: 3rem;
+}
+
+.fvl-d > td > span {
+    letter-spacing: 1.2px;
+    font-weight: 550;
+    color: var(--text-color);
+    text-transform: uppercase;
+    padding-right: 5rem;
+}
+
+.hours-text{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, auto));
+}
+
+.hours-text .hours-box h1{
+    letter-spacing: 1.2px;
+    font-weight: lighter;
+    font-size: 3.2rem;
+    text-align: right;
+    float: left;
+}
+
+.map-frame {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.form{
+    display: flex;
+    width: 80%;
+    margin: auto;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.form-fields, .form-info{
+    flex: 50%;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 600px;
+}
+
+form input, form textarea{
+    margin: 10px 0;
+    padding: 12px;
+    outline: none;
+    font-size: 14px;
+}
+
+form button{
+    border: none;
+    width: 150px;
+    cursor: pointer;
+}
+
+.form-info h1{
+    font-size: 35px;
+    font-weight: 650;
+    letter-spacing: 2px;
+    padding-bottom: 1rem;
+}
+
+.form-info p, .form-info span{
+    font-weight: 300;
+    letter-spacing: 1.5px;
+    line-height: 1.8;
+    padding-bottom: 2rem;
+}
+
+.form-info .icon{
+    padding-top: 1.5rem;
+    margin: auto;
+}
+
+.form-info .bx{
+    padding-right: 1rem;
+}
+
+@media (max-width: 1400px){
+    .form-info p{
+        padding-bottom: 0.7px;
+    }
+
+    .main-container{
+        max-width: 900px;
+        margin: auto;
+    }
+
+    .main-service .main-container .main-column{
+        width: 300px;
+    }
+
+    .service1, .service2, .service3, .service4{
+        width: 750px;
+    }
+}
+
+@media (max-width: 1287px){
+    .form-info p, .form-info span{
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 1250px){
+    .benefits-container, .whyus-container, .who-container, .mission-container{
+        width: 960px;
+    }
+}
+
+@media (max-width: 1133px){
+    .form-info h1{
+        font-size: 1.9rem;
+    }
+
+    .form-info p, .form-info span{
+        font-size: 0.85rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .who-text h1, .benefits-container .benefits-title h1{
+        font-size: 35px;
+    }
+    
+    .who-text h4{
+        font-size: 15px;
+    }
+    
+    .who-text p{
+        font-size: 15px;
+    }
+
+    .about-image img{
+        width: 300px;
+        height: 300px;
+    }
+    
+    .text-line h1{
+        font-size: 31px;
+    }
+    
+    .whyus h2{
+        font-size: 28px;
+    }
+    
+    ul li, .text-line p{
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 1099px){
+    .main-container{
+        max-width: 600px;
+        margin: auto;
+        text-align: center;
+    }
+
+    .main-row{
+        flex-direction: column;
+        margin: auto;
+        padding-top: 0rem;
+        text-align: center;
+    }
+
+    .main-service .main-container .main-column{
+        text-align: center;
+        width: auto;
+        margin: 0 auto;
+        padding-bottom: 2.5rem;
+        justify-content: center;
+    }
+
+    .main-service .main-container .main-column p{
+        margin-left: 3rem;
+    }
+
+    .main-service .main-container .navbar{
+        display: none;
+    }
+}
+
+@media (max-width: 1095px){
+    .form{
+        margin: auto;
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .form-info{
+        padding-bottom: 2rem;
+    }
+
+    .form-fields{
+        display: block;
+        text-align: center;
+    }
+
+    form, form button{
+        margin: auto;
+    }
+
+    .aboutus-text h1, .contact-text h1{
+        font-size: 4rem;
+    }
+
+    .benefits-container, .whyus-container, .who-container, .mission-container{
+        width: 850px;
+    }
+
+    .whyus h2{
+        font-size: 26px;
+    }
+    
+    ul li, .text-line p{
+        font-size: 14px;
+    }
+
+    .faqs-container{
+        width: auto;
+    }
+}
+
+@media (max-width: 1085px){
+    .aboutus, .ourservices, .contact{
+        min-height: 600px;
+        padding-top: 7rem;
+    }
+}
+
+@media (max-width: 1000px){
+    .benefits-container, .whyus-container, .who-container, .mission-container{
+        width: 800px;
+    }
+
+    .who-text h1, .benefits-container .benefits-title h1{
+        font-size: 32px;
+    }
+    
+    .who-text h4, .who-text p{
+        font-size: 13px;
+    }
+
+    .text-rblock{
+        right: 3.5%;
+        margin: auto;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .text-lblock{
+        left: 3.5%;
+        margin: auto;
+        text-align: center;
+        align-items: center;
+    }
+
+    .service1, .service2, .service3, .service4{
+        margin: auto;
+    }
+
+    .faqs-container{
+        width: auto;
+    }
+}
+
+@media (max-width: 922px){
+
+    .fvl-d > td {
+        font-size: 0.7rem;
+    }
+    
+    .fvl-d > td > span {
+        letter-spacing: 1px;
+    }
+    
+    .hours-text .hours-box h1{
+        font-size: 2rem;
+    }
+
+    .benefits-container, .whyus-container{
+        width: 550px;
+        display: grid;
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .who-container, .mission-container{
+        width: 700px;
+    }
+}
+
+@media (max-width: 855px){
+
+    .hours-box br{
+        display: none;
+    }
+
+    .hours-box{
+        margin: auto;
+    }
+
+    .hours-text{
+        display: grid;
+        grid-template-columns: 1fr;
+        margin: auto;
+    }
+
+    .fvl-d > td {
+        font-size: 1rem;
+        padding-left: 0rem;
+    }
+    
+    .fvl-d > td > span {
+        letter-spacing: 1.5px;
+        padding-right: 2rem;
+    }
+    
+    .hours-text .hours-box h1{
+        font-size: 3rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .who-container, .mission-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        text-align: center;
+        width: 550px;
+    }
+
+    .service1, .service2, .service3, .service4{
+        width: 620px;
+        height: 410px;
+    }
+
+    .text-rblock{
+        right: 4.5%;
+        top: 3.5%;
+        width: 560px;
+        height: 380px;
+    }
+    
+    .text-lblock{
+        left: 4.5%;
+        top: 3.5%;
+        width: 560px;
+        height: 380px;
+    }
+
+    .service1 h1, .service2 h1, .service3 h1, .service4 h1{
+        font-size: 28px;
+    }
+
+    .text-rblock p, .text-lblock p{
+        font-size: 13px;
+    }
+
+    .space{
+        padding-bottom: 3rem;
+    }
+}
+
+@media (max-width: 750px){
+    .benefits-container, .whyus-container, .who-container, .mission-container{
+        width: 400px;
+    }
+}
+
+@media (max-width: 681px){
+    .aboutus-text h1, .contact-text h1{
+        font-size: 3.2rem;
+    }
+
+    .fvl-d > td {
+        font-size: 0.8rem;
+    }
+    
+    .fvl-d > td > span {
+        letter-spacing: 1.5px;
+    }
+    
+    .hours-text .hours-box h1{
+        font-size: 2.7rem;
+    }
+
+    .benefits-container, .whyus-container, .who-container, .mission-container{
+        width: 300px;
+    }
+}
+
+@media (max-width: 560px){
+    .hours-text .hours-box h1{
+        font-size: 2.3rem;
+    }
+
+    .service1, .service2, .service3, .service4{
+        width: 450px;
+        height: 320px;
+    }
+
+    .text-rblock{
+        right: -0.04%;
+        top: -0.07%;
+        width: 450px;
+        height: 320px;
+    }
+    
+    .text-lblock{
+        left: -0.04%;
+        top: -0.07%;
+        width: 450px;
+        height: 320px;
+    }
+
+    .service1 h1, .service2 h1, .service3 h1, .service4 h1{
+        font-size: 22px;
+    }
+
+    .text-rblock p, .text-lblock p{
+        font-size: 10px;
+    }
+}

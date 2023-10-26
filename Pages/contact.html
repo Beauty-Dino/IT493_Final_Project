@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Studio by Dino - Home</title>
+    <!-- Link to external CSS stylesheet -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style1.css">
+    <!-- Box Icons -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+
+<body>
+
+    <button class="scrollTop" id="scrollTop" onclick="scrollToTop()">
+        <i class='bx bxs-up-arrow-circle'></i>
+    </button>
+
+    <header class="header">
+        
+        <!-- Navbar -->
+        <div class="nav container">
+
+            <!-- Logo -->
+            <a href="../index.html" class="logo">
+                <img src="../Images/logo.png" alt="">
+                <span class="logo-name">Beauty Studio by Dino</span>
+            </a>
+
+            <!-- Nav Links -->
+            <div class="navbar">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link"> Services</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <a href="" class="schedule-btn btn">Book Now</a>
+            </div>
+
+            <!-- Icons -->
+            <div class="header-icon">
+                <i class='bx bx-user'></i>
+            </div>
+
+            <!-- Menu Icon -->
+            <div class="menu-icon">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- Contact Home -->
+    <section class="contact" id="contact">
+        
+        <div class="home-data container">
+
+             <!-- Home Text -->
+            <div class="contact-text">
+
+                <h1> Contact Us</h1>
+
+            </div>
+
+        </div>
+
+    </section>
+
+   <!-- Hours Info -->
+
+   <div class="about-container">
+        <section class="about" id="about">
+
+            <div class="hours-text">
+            
+                <div class="hours-box">
+                    <h1>WORKING <br>HOURS</h1>
+                </div>
+
+                <div class="hours-box">
+                    <table>
+                        <tr class="monday fvl-d">
+                            <td><span>MONDAY</span></td>
+                            <td>8.00 AM - 6.00 PM</td>
+                        </tr>
+                
+                        <tr class="tuesday fvl-d">
+                            <td><span>TUESDAY</span></td>
+                            <td>8.00 AM - 6.00 PM</td>
+                        </tr>
+
+                        <tr class="wednesday fvl-d">
+                            <td><span>WEDNESDAY</span></td>
+                            <td>8.30 AM - 6.00 PM</td>
+                        </tr>
+
+                        <tr class="thursday fvl-d">
+                            <td><span>THURSDAY</span></td>
+                            <td>8.00 AM - 6.00 PM</td>
+                        </tr>
+
+                        <tr class="friday fvl-d">
+                            <td><span>FRIDAY</span></td>
+                            <td>8.00 AM - 6.00 PM</td>
+                        </tr>
+                    
+                        <tr class="saturday fvl-d">
+                            <td><span>SATURDAY</span></td>
+                            <td>8.00 AM - 6.00 PM</td>
+                        </tr>
+
+                        <tr class="sunday fvl-d">
+                            <td><span>SUNDAY</span></td>
+                            <td>Closed</td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+
+        </section>
+    </div>
+
+    <!-- Google Map -->
+    <iframe src="https://snazzymaps.com/embed/519306" width="100%" height="350px" style="border:none;"></iframe>
+
+    <!-- Contact Form -->
+
+    <div class="form-container">
+
+        <section class="form" id="form">
+
+            <div class="form-fields">
+
+                <form onsubmit="sendEmail(); reset(); return false;">
+
+                    <input type="text" id="name" placeholder="Name" required>
+                    <input type="email" id="email" placeholder="Email" required>
+                    <input type="text" id="subject" placeholder="Subject" required>
+                    <textarea id="message" rows="5" placeholder="Write a message..."></textarea>    
+                    <button class="book-btn" type="submit">SEND</button>
+
+                </form>
+
+                <p id="error_para" ></p>
+
+            </div>
+
+            <div class="form-info">
+
+                <h1>CONTACT INFO</h1>
+
+                <p>Feel free to send us a message, call us, or come inside our location with any questions or concerns. We look forward to seeing you!
+                    <br><br>*All inquires are treated confidentially.</p>
+
+                <div class="icon">
+                    <i class='bx bxs-map' ></i>
+                    <span>3609 Chain Bridge Rd STE C, Fairfax, VA 22031</span>
+                </div>              
+
+                <div class="icon">
+                    <i class='bx bxs-envelope' ></i>
+                    <span>beautystudiobydino.com</span>
+                </div>
+
+                <div class="icon">
+                    <i class='bx bxs-phone'></i>
+                    <span>571 225 2693</span>
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-container">
+
+        <section id="footer" class="footer">
+
+        <h5>Book online</h5>
+        <h1>Book Your Session</h1>
+        <p>Offering the best permanent cosmetic treatment / microblading here in Fairfax, VA. 
+            We are also welcoming clients from Tysons Corner, Falls Church, Arlington and more.</p>
+
+        <div><a href="" class="book-btn">BOOK ONLINE</a></div>
+
+        <h4>or call me at</h4>
+        <a href="tel:5712252693">
+            <p class="call">+1 571-225-2693</p>
+        </a>
+        
+        <div class="social">
+            <a href="https://www.facebook.com/BeautyStudiobyDinoLLC" target="_blank">
+                <i class='bx bxl-facebook-circle'></i>
+            </a>
+            <a href="https://www.instagram.com/beautystudioby.dino/" target="_blank">
+                <i class='bx bxl-instagram-alt' ></i>
+            </a>
+            <a href="https://x.com/browsbydino?s=21&t=Zc-iQZvTNHBkPpUmzz8GgQ" target="_blank">
+                <i class='bx bxl-twitter' ></i>
+            </a>
+            <a href="https://www.yelp.com/biz/beauty-studio-by-dino-fairfax-3?utm_campaign=www_business_share_popup&utm_medium=copy_link&utm_source=(direct)" target="_blank">
+                <i class='bx bxl-yelp' ></i>
+            </a>
+        </div>
+
+        <p class="copyright">Copyright © 2023 Beauty Studio by Dino</p>
+
+        </section>
+
+    </div>
+
+    <!-- Link to JavaScript -->
+    <script src="../js/main.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+</body>
+
+</html>
